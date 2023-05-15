@@ -13,7 +13,8 @@
 		EC463CDE2A0FE9F30085B7FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC463CDC2A0FE9F30085B7FA /* Main.storyboard */; };
 		EC463CE02A0FE9F50085B7FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC463CDF2A0FE9F50085B7FA /* Assets.xcassets */; };
 		EC463CE32A0FE9F50085B7FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC463CE12A0FE9F50085B7FA /* LaunchScreen.storyboard */; };
-		EC463CEB2A0FEB0D0085B7FA /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC463CEA2A0FEB0D0085B7FA /* CardCell.swift */; };
+		EC463CF62A1291E00085B7FA /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC463CF42A1291E00085B7FA /* CardCell.swift */; };
+		EC463CF72A1291E00085B7FA /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC463CF52A1291E00085B7FA /* CardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		EC463CDF2A0FE9F50085B7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC463CE22A0FE9F50085B7FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC463CE42A0FE9F50085B7FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC463CEA2A0FEB0D0085B7FA /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		EC463CF42A1291E00085B7FA /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		EC463CF52A1291E00085B7FA /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 				EC463CD62A0FE9F30085B7FA /* AppDelegate.swift */,
 				EC463CD82A0FE9F30085B7FA /* SceneDelegate.swift */,
 				EC463CDA2A0FE9F30085B7FA /* ViewController.swift */,
-				EC463CEA2A0FEB0D0085B7FA /* CardCell.swift */,
+				EC463CF42A1291E00085B7FA /* CardCell.swift */,
+				EC463CF52A1291E00085B7FA /* CardCell.xib */,
 				EC463CDC2A0FE9F30085B7FA /* Main.storyboard */,
 				EC463CDF2A0FE9F50085B7FA /* Assets.xcassets */,
 				EC463CE12A0FE9F50085B7FA /* LaunchScreen.storyboard */,
@@ -131,6 +134,7 @@
 				EC463CE32A0FE9F50085B7FA /* LaunchScreen.storyboard in Resources */,
 				EC463CE02A0FE9F50085B7FA /* Assets.xcassets in Resources */,
 				EC463CDE2A0FE9F30085B7FA /* Main.storyboard in Resources */,
+				EC463CF72A1291E00085B7FA /* CardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC463CF62A1291E00085B7FA /* CardCell.swift in Sources */,
 				EC463CDB2A0FE9F30085B7FA /* ViewController.swift in Sources */,
 				EC463CD72A0FE9F30085B7FA /* AppDelegate.swift in Sources */,
-				EC463CEB2A0FEB0D0085B7FA /* CardCell.swift in Sources */,
 				EC463CD92A0FE9F30085B7FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

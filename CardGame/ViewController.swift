@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
     @IBOutlet weak var collectionView: UICollectionView!
     var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🛴", "🚲", "🛵", "🏍", "🛺", "✈️", "🚀", "🛳", "⛵️", "🛸", "🚁"]
     var emojiCount = 20
@@ -16,12 +17,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.register(CardCell.self, forCellWithReuseIdentifier: "CardCell")
+//        collectionView.register(CardCell.self, forCellWithReuseIdentifier: "CardCell")
+        
+        collectionView.register(CardCell.nib(), forCellWithReuseIdentifier: "CardCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
+        
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: 70, height: 110)
+//        collectionView.collectionViewLayout = layout
     }
 
+    
+    
 }
+
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,11 +43,11 @@ extension ViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
         let emoji = emojis[indexPath.item % emojis.count]
         cell.configure(with: emoji)
-        
         cell.backgroundColor = .white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 20
+        
         
         return cell
     }
@@ -57,8 +67,6 @@ extension ViewController: UICollectionViewDelegate {
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = 70
-        let height: CGFloat = 110
-        return CGSize(width: width, height: height)
+        return CGSize(width: 70, height: 110)
     }
 }
