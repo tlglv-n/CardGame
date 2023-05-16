@@ -11,27 +11,25 @@ class ViewController: UIViewController {
 
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🛴", "🚲", "🛵", "🏍", "🛺", "✈️", "🚀", "🛳", "⛵️", "🛸", "🚁"]
+//    var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🛴", "🚲", "🛵", "🏍", "🛺", "✈️", "🚀", "🛳", "⛵️", "🛸", "🚁"]
+    
+    var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒"]
     var emojiCount = 20
 	var firstChosenEmojiCell: CardCell?
 	//var secondChosenEmojiCell: CardCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        collectionView.register(CardCell.self, forCellWithReuseIdentifier: "CardCell")
-        
+        emojis += emojis
         collectionView.register(CardCell.nib(), forCellWithReuseIdentifier: "CardCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
         
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 70, height: 110)
-//        collectionView.collectionViewLayout = layout
     }
 
 	@IBAction func startAgainButtonPressed(_ sender: UIButton) {
 		firstChosenEmojiCell = nil
+        emojis.shuffle()
 		collectionView.reloadData()
 	}
 	
@@ -47,7 +45,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        let emoji = emojis[indexPath.item % emojis.count/2]
+        let emoji = emojis[indexPath.item]
 		print(indexPath.item % emojis.count)
         cell.configure(with: emoji)
         cell.backgroundColor = .white
@@ -99,9 +97,6 @@ extension ViewController: UICollectionViewDelegate {
         // TODO: Check if selected card matches with another selected card
     }
     
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        cell.backgroundColor = .white
-//    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
