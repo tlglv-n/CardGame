@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mXU-3c-ayT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                                <rect key="frame" x="20" y="4" width="374" height="765"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fUM-Uu-Mfh">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fUM-Uu-Mfh">
                                     <size key="itemSize" width="53" height="53"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -38,14 +39,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbX-aN-SXv">
+                                <rect key="frame" x="104.5" y="777" width="205" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Again"/>
+                                <connections>
+                                    <action selector="startAgainButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="18q-W2-1D5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Abx-hl-IXp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mXU-3c-ayT" secondAttribute="trailing" constant="20" id="KbK-Fr-4JR"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Nkw-Rv-9hW"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.495169" id="Qms-uH-4eo"/>
                             <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="XZC-eI-Y5p"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="dAP-FO-YxI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="93" id="fGK-YU-ICS"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vin-oH-QwM"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jTN-no-GxY"/>
                         </constraints>
                     </view>
                     <connections>

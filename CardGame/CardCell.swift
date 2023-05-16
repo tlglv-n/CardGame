@@ -10,6 +10,7 @@ import UIKit
 class CardCell: UICollectionViewCell {
     
     @IBOutlet var emojiLabel: UILabel!
+	var emoji: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +18,9 @@ class CardCell: UICollectionViewCell {
     }
     
     public func configure(with emoji: String) {
-        emojiLabel.text = emoji
+		self.backgroundColor = UIColor.white
+        emojiLabel.text = ""
+		self.emoji = emoji
     }
 
     static func nib() -> UINib {
@@ -25,6 +28,13 @@ class CardCell: UICollectionViewCell {
     }
     
     func flip() {
-        
+		if self.backgroundColor == UIColor.white {
+			self.backgroundColor = UIColor.gray
+			self.emojiLabel.text = emoji
+		} else if self.backgroundColor == UIColor.gray {
+			self.backgroundColor = UIColor.white
+			self.emojiLabel.text = ""
+		}
+		
     }
 }

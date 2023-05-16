@@ -64,8 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "CardCell"
-            landmarkType = "3">
+            landmarkName = "configure(with:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -80,8 +80,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "CardCell"
-            landmarkType = "3">
+            landmarkName = "flip()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "76CB4A43-3AFA-4515-A8A1-82F4387E60E4 - b32624ac1861c336"
