@@ -11,6 +11,10 @@ class ViewController: UIViewController {
 
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    var score = 0
+    
     var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🛴", "🚲", "🛵", "🏍", "🛺", "✈️", "🚀", "🛳", "⛵️", "🛸", "🚁"]
     var newEmojis: [String] = []
     var emojiCount = 20
@@ -22,23 +26,29 @@ class ViewController: UIViewController {
         collectionView.register(CardCell.nib(), forCellWithReuseIdentifier: "CardCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        shuffleEmojis()
         
+        setupConfiguration()
     }
 
+    func setupConfiguration() {
+        shuffleEmojis()
+        score = 0
+        scoreLabel?.text = "Score: \(score)"
+    }
+    
 	@IBAction func startAgainButtonPressed(_ sender: UIButton) {
 		firstChosenEmojiCell = nil
-        shuffleEmojis()
+        setupConfiguration()
 		collectionView.reloadData()
 	}
 	@IBAction func tenButtonPressed(_ sender: UIButton) {
 		emojiCount = 10
-        shuffleEmojis()
+        setupConfiguration()
 		collectionView.reloadData()
 	}
     @IBAction func twentyButtonPressed(_sender: UIButton) {
         emojiCount = 20
-        shuffleEmojis()
+        setupConfiguration()
         collectionView.reloadData()
     }
 	
@@ -93,18 +103,29 @@ extension ViewController: UICollectionViewDelegate {
 			return
 		} else if firstChosenEmojiCell != nil {
             if firstChosenEmojiCell?.emoji == cell.emoji && cell.self != firstChosenEmojiCell.self {
-//				firstChosenEmojiCell?.emojiLabel.text = firstChosenEmojiCell?.emoji
-//				cell.emojiLabel.text = cell.emoji
-//
-//				firstChosenEmojiCell?.backgroundColor = UIColor.systemGreen
-//				cell.backgroundColor = UIColor.systemGreen
+                
+                score += 1
+                scoreLabel.text = "Score: \(score)"
+                
+				firstChosenEmojiCell?.emojiLabel.text = firstChosenEmojiCell?.emoji
+				cell.emojiLabel.text = cell.emoji
+
+				firstChosenEmojiCell?.backgroundColor = UIColor.systemGreen
+				cell.backgroundColor = UIColor.systemGreen
                 
 				// добавить таймер
 				// сделать карточку не кликабельной, цвет белый, без рамки и без текста
-                firstChosenEmojiCell?.removeFromSuperview()
-                cell.removeFromSuperview()
                 
-				firstChosenEmojiCell = nil
+                let toRemoveFirstChosen = firstChosenEmojiCell
+                let toRemoveSecondChosen = cell
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                    self.firstChosenEmojiCell?.removeFromSuperview()
+//                    cell.removeFromSuperview()
+//
+//                    self.firstChosenEmojiCell = nil
+                    toRemoveFirstChosen?.removeFromSuperview()
+                    toRemoveSecondChosen.removeFromSuperview()
+                }
 			} else {
 				firstChosenEmojiCell?.flip()
 				

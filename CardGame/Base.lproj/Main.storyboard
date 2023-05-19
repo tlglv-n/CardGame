@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mXU-3c-ayT">
-                                <rect key="frame" x="20" y="0.0" width="374" height="769"/>
+                                <rect key="frame" x="20" y="76" width="374" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fUM-Uu-Mfh">
                                     <size key="itemSize" width="53" height="53"/>
@@ -57,7 +57,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJp-HF-N32">
                                 <rect key="frame" x="339" y="777" width="45" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="14Z-Im-6sf"/>
+                                    <constraint firstAttribute="width" constant="45" id="AUE-YM-AVa"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="20"/>
@@ -65,26 +65,35 @@
                                     <action selector="twentyButtonPressedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MfX-4f-50D"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egl-xF-Myo">
+                                <rect key="frame" x="326" y="44" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DbX-aN-SXv" secondAttribute="bottom" constant="54" id="43P-CJ-Nbv"/>
-                            <constraint firstItem="0M6-KH-faX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="9jF-e9-bcc"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GQe-VS-Fni"/>
-                            <constraint firstItem="EJp-HF-N32" firstAttribute="leading" secondItem="DbX-aN-SXv" secondAttribute="trailing" constant="29.5" id="LWJ-Jc-eWf"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OEy-vJ-tgE"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OWA-1L-OFX"/>
-                            <constraint firstItem="0M6-KH-faX" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="f3N-1c-Tsn"/>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="leading" secondItem="0M6-KH-faX" secondAttribute="trailing" constant="19.5" id="fsu-bM-xHy"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="centerX" secondItem="DbX-aN-SXv" secondAttribute="centerX" id="kah-k2-Pee"/>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="EJp-HF-N32" secondAttribute="top" id="kzw-fb-YV1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJp-HF-N32" secondAttribute="trailing" constant="30" id="l6R-g9-yhE"/>
-                            <constraint firstItem="0M6-KH-faX" firstAttribute="baseline" secondItem="EJp-HF-N32" secondAttribute="baseline" id="p13-FU-PuW"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="leading" secondItem="0M6-KH-faX" secondAttribute="trailing" constant="19.5" id="5DL-XI-tdw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJp-HF-N32" secondAttribute="trailing" constant="30" id="7ZW-v7-Muo"/>
+                            <constraint firstItem="Egl-xF-Myo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GaB-Rp-ubs"/>
+                            <constraint firstItem="EJp-HF-N32" firstAttribute="leading" secondItem="DbX-aN-SXv" secondAttribute="trailing" constant="29.5" id="I7n-7o-XxG"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="Egl-xF-Myo" secondAttribute="bottom" constant="11" id="JRo-P2-4No"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QDD-BO-904"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="centerX" secondItem="DbX-aN-SXv" secondAttribute="centerX" id="Rg8-Mf-mHQ"/>
+                            <constraint firstItem="Egl-xF-Myo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="326" id="XWB-Xb-sN1"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="baseline" secondItem="EJp-HF-N32" secondAttribute="baseline" id="aKl-fY-4zu"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e8D-NH-szf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DbX-aN-SXv" secondAttribute="bottom" constant="54" id="kZn-eb-iB7"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="q3i-hM-SaS"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="EJp-HF-N32" secondAttribute="top" id="sZu-Vk-c9x"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="vwb-TV-vpl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="mXU-3c-ayT" id="8DI-gG-njA"/>
+                        <outlet property="scoreLabel" destination="Egl-xF-Myo" id="mUf-Td-jeu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
