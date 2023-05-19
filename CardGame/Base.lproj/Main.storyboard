@@ -46,17 +46,41 @@
                                     <action selector="startAgainButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="18q-W2-1D5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M6-KH-faX">
+                                <rect key="frame" x="10" y="777" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="10"/>
+                                <connections>
+                                    <action selector="tenButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kyY-FK-oSg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJp-HF-N32">
+                                <rect key="frame" x="339" y="777" width="45" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="14Z-Im-6sf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="20"/>
+                                <connections>
+                                    <action selector="twentyButtonPressedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MfX-4f-50D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mXU-3c-ayT" secondAttribute="trailing" constant="20" id="KbK-Fr-4JR"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Nkw-Rv-9hW"/>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.495169" id="Qms-uH-4eo"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="XZC-eI-Y5p"/>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="dAP-FO-YxI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="93" id="fGK-YU-ICS"/>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jTN-no-GxY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DbX-aN-SXv" secondAttribute="bottom" constant="54" id="43P-CJ-Nbv"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="9jF-e9-bcc"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GQe-VS-Fni"/>
+                            <constraint firstItem="EJp-HF-N32" firstAttribute="leading" secondItem="DbX-aN-SXv" secondAttribute="trailing" constant="29.5" id="LWJ-Jc-eWf"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OEy-vJ-tgE"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OWA-1L-OFX"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="f3N-1c-Tsn"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="leading" secondItem="0M6-KH-faX" secondAttribute="trailing" constant="19.5" id="fsu-bM-xHy"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="centerX" secondItem="DbX-aN-SXv" secondAttribute="centerX" id="kah-k2-Pee"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="EJp-HF-N32" secondAttribute="top" id="kzw-fb-YV1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJp-HF-N32" secondAttribute="trailing" constant="30" id="l6R-g9-yhE"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="baseline" secondItem="EJp-HF-N32" secondAttribute="baseline" id="p13-FU-PuW"/>
                         </constraints>
                     </view>
                     <connections>

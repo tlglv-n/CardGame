@@ -6,33 +6,53 @@
 //
 
 import UIKit
-
+ 
 class ViewController: UIViewController {
 
 
     @IBOutlet weak var collectionView: UICollectionView!
-//    var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🛴", "🚲", "🛵", "🏍", "🛺", "✈️", "🚀", "🛳", "⛵️", "🛸", "🚁"]
-    
-    var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒"]
+    var emojis = ["🚜", "🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🛴", "🚲", "🛵", "🏍", "🛺", "✈️", "🚀", "🛳", "⛵️", "🛸", "🚁"]
+    var newEmojis: [String] = []
     var emojiCount = 20
 	var firstChosenEmojiCell: CardCell?
-	//var secondChosenEmojiCell: CardCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emojis += emojis
+        
         collectionView.register(CardCell.nib(), forCellWithReuseIdentifier: "CardCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
+        shuffleEmojis()
         
     }
 
 	@IBAction func startAgainButtonPressed(_ sender: UIButton) {
 		firstChosenEmojiCell = nil
-        emojis.shuffle()
+        shuffleEmojis()
 		collectionView.reloadData()
 	}
+	@IBAction func tenButtonPressed(_ sender: UIButton) {
+		emojiCount = 10
+        shuffleEmojis()
+		collectionView.reloadData()
+	}
+    @IBAction func twentyButtonPressed(_sender: UIButton) {
+        emojiCount = 20
+        shuffleEmojis()
+        collectionView.reloadData()
+    }
 	
+    func shuffleEmojis() {
+        newEmojis = Array(repeating: "", count: emojiCount)
+        
+        for i in stride(from: 0, to: emojiCount, by: 2) {
+            let randNum = Int.random(in: 0..<emojis.count)
+            newEmojis[i] = emojis[randNum]
+            newEmojis[i + 1] = emojis[randNum]
+        }
+        
+        newEmojis.shuffle()
+    }
     
 }
 
@@ -45,10 +65,15 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        let emoji = emojis[indexPath.item]
-		print(indexPath.item % emojis.count)
+		
+//        let randomNumer = Int.random(in: 0..<9)
+//        print(randomNumer)
+//        //let emoji = emojis[indexPath.item % emojis.count/2]
+//		let emoji = emojis[randomNumer]
+        
+        let emoji = newEmojis[indexPath.item]
+		
         cell.configure(with: emoji)
-        cell.backgroundColor = .white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 20
@@ -67,13 +92,18 @@ extension ViewController: UICollectionViewDelegate {
 			cell.flip()
 			return
 		} else if firstChosenEmojiCell != nil {
-			if firstChosenEmojiCell?.emoji == cell.emoji {
-				firstChosenEmojiCell?.emojiLabel.text = firstChosenEmojiCell?.emoji
-				cell.emojiLabel.text = cell.emoji
-				
-				firstChosenEmojiCell?.backgroundColor = UIColor.systemGreen
-				cell.backgroundColor = UIColor.systemGreen
-				
+            if firstChosenEmojiCell?.emoji == cell.emoji && cell.self != firstChosenEmojiCell.self {
+//				firstChosenEmojiCell?.emojiLabel.text = firstChosenEmojiCell?.emoji
+//				cell.emojiLabel.text = cell.emoji
+//
+//				firstChosenEmojiCell?.backgroundColor = UIColor.systemGreen
+//				cell.backgroundColor = UIColor.systemGreen
+                
+				// добавить таймер
+				// сделать карточку не кликабельной, цвет белый, без рамки и без текста
+                firstChosenEmojiCell?.removeFromSuperview()
+                cell.removeFromSuperview()
+                
 				firstChosenEmojiCell = nil
 			} else {
 				firstChosenEmojiCell?.flip()
@@ -82,6 +112,7 @@ extension ViewController: UICollectionViewDelegate {
 				cell.flip()
 			}
 		}
+		
 		
 		
 		
@@ -97,6 +128,9 @@ extension ViewController: UICollectionViewDelegate {
         // TODO: Check if selected card matches with another selected card
     }
     
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        cell.backgroundColor = .white
+//    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
