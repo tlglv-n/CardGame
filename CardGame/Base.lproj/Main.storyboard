@@ -57,7 +57,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJp-HF-N32">
                                 <rect key="frame" x="339" y="777" width="45" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="AUE-YM-AVa"/>
+                                    <constraint firstAttribute="width" constant="45" id="FaJ-Tq-hDk"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="20"/>
@@ -71,24 +71,54 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-at-Rj4">
+                                <rect key="frame" x="209" y="830" width="100" height="31"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="+">
+                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k4j-pf-9uu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXp-Ow-UOJ">
+                                <rect key="frame" x="104" y="830" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="OMd-EV-Dyf"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="-">
+                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="removeCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2l-XH-jbA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="leading" secondItem="0M6-KH-faX" secondAttribute="trailing" constant="19.5" id="5DL-XI-tdw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJp-HF-N32" secondAttribute="trailing" constant="30" id="7ZW-v7-Muo"/>
-                            <constraint firstItem="Egl-xF-Myo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GaB-Rp-ubs"/>
-                            <constraint firstItem="EJp-HF-N32" firstAttribute="leading" secondItem="DbX-aN-SXv" secondAttribute="trailing" constant="29.5" id="I7n-7o-XxG"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="Egl-xF-Myo" secondAttribute="bottom" constant="11" id="JRo-P2-4No"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QDD-BO-904"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="centerX" secondItem="DbX-aN-SXv" secondAttribute="centerX" id="Rg8-Mf-mHQ"/>
-                            <constraint firstItem="Egl-xF-Myo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="326" id="XWB-Xb-sN1"/>
-                            <constraint firstItem="0M6-KH-faX" firstAttribute="baseline" secondItem="EJp-HF-N32" secondAttribute="baseline" id="aKl-fY-4zu"/>
-                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e8D-NH-szf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DbX-aN-SXv" secondAttribute="bottom" constant="54" id="kZn-eb-iB7"/>
-                            <constraint firstItem="0M6-KH-faX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="q3i-hM-SaS"/>
-                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="EJp-HF-N32" secondAttribute="top" id="sZu-Vk-c9x"/>
-                            <constraint firstItem="0M6-KH-faX" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="vwb-TV-vpl"/>
+                            <constraint firstItem="Egl-xF-Myo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="326" id="0J2-eA-Lgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Bm-at-Rj4" secondAttribute="trailing" constant="105" id="0p3-GD-d5Y"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="baseline" secondItem="EJp-HF-N32" secondAttribute="baseline" id="1z8-iH-Dxz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EJp-HF-N32" secondAttribute="trailing" constant="30" id="HEC-XV-2NC"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KY5-dm-1IJ"/>
+                            <constraint firstItem="RXp-Ow-UOJ" firstAttribute="top" secondItem="DbX-aN-SXv" secondAttribute="bottom" constant="22" id="ODC-rW-faI"/>
+                            <constraint firstItem="4Bm-at-Rj4" firstAttribute="leading" secondItem="RXp-Ow-UOJ" secondAttribute="trailing" constant="5" id="WDt-5C-6M4"/>
+                            <constraint firstItem="RXp-Ow-UOJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="XD2-r6-DyO"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="top" secondItem="Egl-xF-Myo" secondAttribute="bottom" constant="11" id="chQ-ZC-a2i"/>
+                            <constraint firstItem="EJp-HF-N32" firstAttribute="leading" secondItem="DbX-aN-SXv" secondAttribute="trailing" constant="29.5" id="e5m-FE-N1b"/>
+                            <constraint firstItem="0M6-KH-faX" firstAttribute="top" secondItem="mXU-3c-ayT" secondAttribute="bottom" constant="8" symbolic="YES" id="eCh-BZ-SzK"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fB3-00-9xJ"/>
+                            <constraint firstItem="Egl-xF-Myo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iRv-r2-U3g"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="leading" secondItem="0M6-KH-faX" secondAttribute="trailing" constant="19.5" id="kWW-JD-8qI"/>
+                            <constraint firstItem="DbX-aN-SXv" firstAttribute="top" secondItem="EJp-HF-N32" secondAttribute="top" id="tCf-CG-pct"/>
+                            <constraint firstItem="RXp-Ow-UOJ" firstAttribute="baseline" secondItem="4Bm-at-Rj4" secondAttribute="baseline" id="tp3-EI-NzE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RXp-Ow-UOJ" secondAttribute="bottom" constant="1" id="uHq-TH-rpt"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="centerX" secondItem="DbX-aN-SXv" secondAttribute="centerX" id="wGB-rc-A0t"/>
+                            <constraint firstItem="mXU-3c-ayT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yik-yb-Bpj"/>
                         </constraints>
                     </view>
                     <connections>

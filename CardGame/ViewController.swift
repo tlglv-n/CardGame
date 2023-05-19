@@ -51,7 +51,21 @@ class ViewController: UIViewController {
         setupConfiguration()
         collectionView.reloadData()
     }
-	
+   
+    @IBAction func addCard(_ sender: Any) {
+        emojiCount += 2
+        shuffleEmojis()
+        collectionView.reloadData()
+    }
+    @IBAction func removeCard(_ sender: Any) {
+        if emojiCount >= 2 {
+            emojiCount -= 2
+            shuffleEmojis()
+            collectionView.reloadData()
+        }
+    }
+    
+    
     func shuffleEmojis() {
         newEmojis = Array(repeating: "", count: emojiCount)
         
